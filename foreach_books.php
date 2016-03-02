@@ -1,3 +1,4 @@
+<!-- {WORK IN PROGRESS } NEEDS WORK -->
 <!-- foreach_books.php -->
 
 <?php
@@ -41,6 +42,15 @@ foreach($books as $book){
 
 }
 
+foreach ($books as $title =>){
+	echo "title: " . $title . PHP_EOL;
+
+	foreach ($book as $info => $value){
+			echo "{$info}: $value"
+	}
+
+}
+
 
 
 // Have it output the book's title, 
@@ -49,3 +59,18 @@ foreach($books as $book){
 ?>
 
 <!-- end of foreach_books.php -->
+
+
+foreach ($books as $title => $book){
+	if ($book['published'] > 1950){
+		echo "title: " . $title . PHP_EOL;
+		foreach ($book as $info => $value){
+			echo "{$info}: $value";
+
+	}
+
+	echo PHP_EOL;
+
+	echo "published: " ." $book
+	}
+}
