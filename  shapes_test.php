@@ -3,7 +3,9 @@
 <?php
 require_once 'rectangle.php';
 
-
+// use this to run rectangle
+$shape = new Rectangle(22, 31);
+echo $shape->area();
 
 
 ?>

@@ -11,13 +11,13 @@ class Rectangle {
   public $width;
 
   // a constructor to set the height and width on instantiation
-  public function __heightWidth($height, $width){
-        $this->$height;
-        $this->$width;
+  public function __construct($height, $width){
+        $this->height = $height;
+        $this->width = $width;
   }
 
   public function area(){
-      return $this->firstName . ' ' . $this->lastName;
+      return $this->height * $this->width;
   }
 
 }
