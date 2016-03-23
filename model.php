@@ -1,7 +1,7 @@
 <?php
 //  Michael Burney
 //  model.php
-//  9.2.4  
+//  9.2.4
 
 class Data
 {
@@ -28,10 +28,10 @@ class Data
 }
 
 // THIS IS A OBJECT MOFO!
-$poop = new Data();
+$test = new Data();
 // we gave it some stuff
-$poop->crap = 'notcrap';
-$poop->dump = 'notdump';
+$test->stuff = 'notStuff';
+$test->goods = 'notGoods';
 
 // now we wanna see it on the screen
 var_dump($poop);
