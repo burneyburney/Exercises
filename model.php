@@ -28,13 +28,13 @@ class Data
 }
 
 // THIS IS A OBJECT MOFO!
-$test = new Data();
+$test_data = new Data();
 // we gave it some stuff
-$test->stuff = 'notStuff';
-$test->goods = 'notGoods';
+$test_data->information = 'string of information';
+$test_data->moreInformation = 'additional information';
 
 // now we wanna see it on the screen
-var_dump($poop);
+var_dump($test_data);
 
 
 ?>
