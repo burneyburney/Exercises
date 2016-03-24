@@ -7,6 +7,7 @@ class Data
 {
     // empty array
     private $data = [];
+    protected static $table = 'Darth Vader';
 
     // populate the data array, magic setter
     public function __set($name, $value)
@@ -25,6 +26,7 @@ class Data
         // if it gets here return NULL
         return null;
     }
+
 }
 
 // THIS IS A OBJECT MOFO!
