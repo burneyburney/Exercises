@@ -3,7 +3,7 @@
 abstract class Model
 {
     /** @var PDO|null Connection to the database */
-    protected static $dbc = null;
+    protected static $dbc = null
 
     /** @var array Database values for a single record. Array keys should be column names in the DB */
     protected $attributes = array();
