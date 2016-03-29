@@ -61,8 +61,8 @@ abstract class Model
     public function save()
     {
         // @TODO: Ensure there are values in the attributes array before attempting to save
-
         // @TODO: Call the proper database method: if the `id` is set this is an update, else it is a insert
+
     }
 
     /**
