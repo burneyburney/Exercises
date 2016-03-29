@@ -31,3 +31,7 @@ SELECT * FROM sys.database_principals
 // Delete a user using the new method added to the base class.
 
 public static function
+
+// pdo object
+// pdo class
+//
