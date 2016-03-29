@@ -23,6 +23,7 @@ class User extends Model
         // @TODO: Use prepared statements to ensure data security
 
         // @TODO: You will need to iterate through all the attributes to build the prepared query
+        
     }
 
     /**

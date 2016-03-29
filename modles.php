@@ -1,5 +1,10 @@
 <?php
 
+define('DB_HOST', '127.0.0.1');
+define('DB_NAME', 'Users');
+define('DB_USER', 'vagrant');
+define('DB_PASS', 'vagrant');
+
 abstract class Model
 {
     /** @var PDO|null Connection to the database */
@@ -15,10 +20,10 @@ abstract class Model
      *
      * $param array $attributes Optional array of database values to initialize the model record with
      */
-    public function __construct(array $attributes = array())
+    public function __construct(array $attributes       =         array())
     {
         self::dbConnect();
-
+        $this->$attributes = $attributes;
         // @TODO: Initialize the $attributes property with the passed value
     }
 
@@ -30,7 +35,14 @@ abstract class Model
     protected static function dbConnect()
     {
         if (!self::$dbc) {
+
             // @TODO: Connect to database
+            $self::dbc = new PDO(
+                'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME,
+                DB_USER,
+                DB_PASS);
+
+            $self::dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
     }
 
@@ -44,6 +56,12 @@ abstract class Model
     public function __get($name)
     {
         // @TODO: Return the value from attributes for $name if it exists, else return null
+        // $this has dollar sign, everything after doesnt.
+        if(isset($this->attributes[$name])){
+            return $this->attributes[$name];
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -55,6 +73,7 @@ abstract class Model
     public function __set($name, $value)
     {
         // @TODO: Store name/value pair in attributes array
+        $this->attributes[$name] = $value;
     }
 
     /** Store the object in the database */
@@ -62,7 +81,11 @@ abstract class Model
     {
         // @TODO: Ensure there are values in the attributes array before attempting to save
         // @TODO: Call the proper database method: if the `id` is set this is an update, else it is a insert
-
+        if(isset($this->attributes['id'])){
+            $this->update();
+        } else{
+            $this->insert();
+        }
     }
 
     /**
