@@ -2,15 +2,23 @@
 
 // __DIR__ is a *magic constant* with the directory path containing this file.
 // This allows us to correctly require_once Model.php, no matter where this file is being required from.
-require_once __DIR__ . '/Models.php';
+require_once __DIR__ . '/Modles.php';
 
 class User extends Model
 {
     /** Insert a new entry into the database */
     protected function insert()
     {
-        // @TODO: Use prepared statements to ensure data security
+        self::dbConnect();
 
+        $stmt = prepare($attributes[$name])
+
+        // insert
+
+
+
+
+        // @TODO: Use prepared statements to ensure data security
         // @TODO: You will need to iterate through all the attributes to build the prepared query
 
         // @TODO: After the insert, add the id back to the attributes array
@@ -23,7 +31,7 @@ class User extends Model
         // @TODO: Use prepared statements to ensure data security
 
         // @TODO: You will need to iterate through all the attributes to build the prepared query
-        
+
     }
 
     /**
@@ -33,10 +41,13 @@ class User extends Model
      *
      * @return User An instance of the User class with attributes array set to values from the database
      */
+
+    //  wehre just going into database and grabbing a row
     public static function find($id)
+
     {
         // Get connection to the database
-        self::dbConnect();
+        self::dbConnect(  );
 
         // @TODO: Create select statement using prepared statements
 
@@ -55,6 +66,8 @@ class User extends Model
      *
      * @return User[] Array of instances of the User class with attributes set to values from database
      */
+
+    //  grab everything
     public static function all()
     {
         self::dbConnect();

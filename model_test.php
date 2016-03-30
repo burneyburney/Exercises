@@ -20,6 +20,9 @@ $user->last_name = "Miller";
 $user->email = "kmiller@nyu.edu";
 $user->password = "OOBYgucci";
 
+[first_name=>'kelly',
+first_name=>'kelly']
+
 // $user->first_name = "Gary";
 // $user->last_name = "Mcfatton";
 // $user->email = "gmacBB@gfranklin.edu";
